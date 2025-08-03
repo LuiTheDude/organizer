@@ -8,6 +8,7 @@
 import sys
 import os
 import shutil
+import send2trash
 
 # Parse arguments
 if len(sys.argv) < 3:
@@ -78,6 +79,10 @@ if mode == 'size':
                 target_dir = subFolder7
 
             shutil.move(full_path, os.path.join(target_dir, file))
+    for subfolder in os.listdir(folder):
+        subfolder_path = os.path.join(folder, subfolder)
+        if os.path.isdir(subfolder_path) and len(os.listdir(subfolder_path)) == 0: 
+            send2trash.send2trash(subfolder_path)
 
 print('done')
 sys.exit()

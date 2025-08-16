@@ -9,7 +9,7 @@ import sys
 import os
 import shutil
 import send2trash
-
+zxc
 # Parse arguments
 if len(sys.argv) < 3:
     print("Usage: organize.py <absolute_path> <size|ext>")
